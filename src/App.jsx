@@ -22,6 +22,23 @@ function App() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
+
+    const ambientLight = new THREE.AmbientLight(
+      0xffffff,
+      0.5
+    );
+    ambientLight.castShadow = true;
+    scene.add(ambientLight);
+
+    const spotLight = new THREE.SpotLight(
+      0xffffff,
+      1
+    );
+    spotLight.castShadow = true;
+    spotLight.position.set(0, 64, 32);
+    scene.add(spotLight);
+
+    
   })
 
 
