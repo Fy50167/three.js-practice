@@ -44,6 +44,8 @@ function App() {
     scene.add(boxMesh);
 
     const animate = () => {
+      boxMesh.rotation.y += 0.01;
+      boxMesh.rotation.x += 0.01;
       renderer.render(scene, camera);
       window.requestAnimationFrame(animate);
     };
