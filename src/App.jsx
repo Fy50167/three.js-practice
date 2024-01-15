@@ -38,8 +38,12 @@ function App() {
     spotLight.position.set(0, 64, 32);
     scene.add(spotLight);
 
-    
-  })
+    const animate = () => {
+      renderer.render(scene, camera);
+      window.requestAnimationFrame(animate);
+    };
+    animate();
+  }, [])
 
 
   return (
